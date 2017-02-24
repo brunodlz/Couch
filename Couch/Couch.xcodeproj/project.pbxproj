@@ -52,13 +52,37 @@
 		7C9EA6151E6062CA0081E937 /* Couch */ = {
 			isa = PBXGroup;
 			children = (
+				7C9EA6281E6064620081E937 /* AppDelegate */,
+				7C9EA6291E6064700081E937 /* Controllers */,
+				7C9EA62A1E6064790081E937 /* Resources */,
+			);
+			path = Couch;
+			sourceTree = "<group>";
+		};
+		7C9EA6281E6064620081E937 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				7C9EA6161E6062CA0081E937 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7C9EA6291E6064700081E937 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				7C9EA6181E6062CA0081E937 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7C9EA62A1E6064790081E937 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				7C9EA61D1E6062CA0081E937 /* Assets.xcassets */,
 				7C9EA61F1E6062CA0081E937 /* LaunchScreen.storyboard */,
 				7C9EA6221E6062CA0081E937 /* Info.plist */,
 			);
-			path = Couch;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
