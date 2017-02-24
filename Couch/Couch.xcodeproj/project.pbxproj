@@ -143,9 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				7C9EA6151E6062CA0081E937 /* Couch */,
-				7C9EA6141E6062CA0081E937 /* Products */,
-				2CCDF89CEC03B796189F103F /* Pods */,
 				5DBD78843552F2DC7C4D5350 /* Frameworks */,
+				2CCDF89CEC03B796189F103F /* Pods */,
+				7C9EA6141E6062CA0081E937 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,14 +161,14 @@
 			isa = PBXGroup;
 			children = (
 				7C9EA6281E6064620081E937 /* AppDelegate */,
-				7C9EA6941E6068500081E937 /* FlowManager */,
 				7C9EA6821E60678D0081E937 /* Controllers */,
-				7C9EA6811E6067800081E937 /* ViewModel */,
-				7C9EA6881E6067C50081E937 /* View */,
-				7C9EA6911E60680A0081E937 /* Shared */,
-				7C9EA6921E60680F0081E937 /* Extension */,
 				7C9EA6931E6068200081E937 /* Core */,
+				7C9EA6921E60680F0081E937 /* Extension */,
+				7C9EA6941E6068500081E937 /* FlowManager */,
 				7C9EA62A1E6064790081E937 /* Resources */,
+				7C9EA6911E60680A0081E937 /* Shared */,
+				7C9EA6881E6067C50081E937 /* View */,
+				7C9EA6811E6067800081E937 /* ViewModel */,
 			);
 			path = Couch;
 			sourceTree = "<group>";
@@ -180,36 +180,40 @@
 				7C9EA6391E6065900081E937 /* Appearance.swift */,
 			);
 			name = AppDelegate;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		7C9EA62A1E6064790081E937 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				7C9EA61D1E6062CA0081E937 /* Assets.xcassets */,
-				7C9EA61F1E6062CA0081E937 /* LaunchScreen.storyboard */,
 				7C9EA6221E6062CA0081E937 /* Info.plist */,
+				7C9EA61F1E6062CA0081E937 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7C9EA6811E6067800081E937 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA62D1E6065240081E937 /* FlowManagerViewModel.swift */,
 				7C9EA6891E6067CE0081E937 /* Authentication */,
 				7C9EA68A1E6067D30081E937 /* Show */,
+				7C9EA62D1E6065240081E937 /* FlowManagerViewModel.swift */,
 			);
 			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7C9EA6821E60678D0081E937 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA6831E6067950081E937 /* NavigationController */,
 				7C9EA6841E6067A50081E937 /* Authentication */,
+				7C9EA6831E6067950081E937 /* NavigationController */,
 				7C9EA6851E6067AD0081E937 /* Show */,
 			);
 			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7C9EA6831E6067950081E937 /* NavigationController */ = {
@@ -218,6 +222,7 @@
 				7C9EA62F1E6065430081E937 /* MainNavigationController.swift */,
 			);
 			name = NavigationController;
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		7C9EA6841E6067A50081E937 /* Authentication */ = {
@@ -226,16 +231,18 @@
 				7C9EA6311E6065500081E937 /* AuthenticationViewController.swift */,
 			);
 			name = Authentication;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		7C9EA6851E6067AD0081E937 /* Show */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA6331E60655C0081E937 /* ShowTableViewController.swift */,
 				7C9EA6861E6067B50081E937 /* Details */,
 				7C9EA6871E6067BA0081E937 /* Profile */,
+				7C9EA6331E60655C0081E937 /* ShowTableViewController.swift */,
 			);
 			name = Show;
+			path = Show;
 			sourceTree = "<group>";
 		};
 		7C9EA6861E6067B50081E937 /* Details */ = {
@@ -244,6 +251,7 @@
 				7C9EA6351E60656A0081E937 /* DetailsViewController.swift */,
 			);
 			name = Details;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		7C9EA6871E6067BA0081E937 /* Profile */ = {
@@ -252,6 +260,7 @@
 				7C9EA6371E6065760081E937 /* ProfileViewController.swift */,
 			);
 			name = Profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7C9EA6881E6067C50081E937 /* View */ = {
@@ -261,6 +270,7 @@
 				7C9EA68E1E6067F20081E937 /* Show */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		7C9EA6891E6067CE0081E937 /* Authentication */ = {
@@ -269,16 +279,18 @@
 				7C9EA63B1E6065B30081E937 /* AuthenticationViewModel.swift */,
 			);
 			name = Authentication;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		7C9EA68A1E6067D30081E937 /* Show */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA63D1E6065C20081E937 /* ShowViewModel.swift */,
 				7C9EA68B1E6067D90081E937 /* Details */,
 				7C9EA68C1E6067DE0081E937 /* Profile */,
+				7C9EA63D1E6065C20081E937 /* ShowViewModel.swift */,
 			);
 			name = Show;
+			path = Show;
 			sourceTree = "<group>";
 		};
 		7C9EA68B1E6067D90081E937 /* Details */ = {
@@ -287,6 +299,7 @@
 				7C9EA63F1E6065D20081E937 /* DetailsViewModel.swift */,
 			);
 			name = Details;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		7C9EA68C1E6067DE0081E937 /* Profile */ = {
@@ -295,6 +308,7 @@
 				7C9EA6411E6065DC0081E937 /* ProfileViewModel.swift */,
 			);
 			name = Profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7C9EA68D1E6067EC0081E937 /* Authentication */ = {
@@ -303,17 +317,19 @@
 				7C9EA6431E6065F10081E937 /* AuthenticationView.swift */,
 			);
 			name = Authentication;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		7C9EA68E1E6067F20081E937 /* Show */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA6471E6066060081E937 /* ShowCell.swift */,
-				7C9EA6451E6065FC0081E937 /* ShowView.swift */,
 				7C9EA68F1E6067F90081E937 /* Details */,
 				7C9EA6901E6067FD0081E937 /* Profile */,
+				7C9EA6471E6066060081E937 /* ShowCell.swift */,
+				7C9EA6451E6065FC0081E937 /* ShowView.swift */,
 			);
 			name = Show;
+			path = Show;
 			sourceTree = "<group>";
 		};
 		7C9EA68F1E6067F90081E937 /* Details */ = {
@@ -322,6 +338,7 @@
 				7C9EA6491E6066100081E937 /* DetailsView.swift */,
 			);
 			name = Details;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		7C9EA6901E6067FD0081E937 /* Profile */ = {
@@ -330,32 +347,35 @@
 				7C9EA64B1E60661A0081E937 /* ProfileView.swift */,
 			);
 			name = Profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7C9EA6911E60680A0081E937 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA64D1E6066280081E937 /* ViewConfiguration.swift */,
 				7C9EA64F1E6066350081E937 /* ColorPalette.swift */,
+				7C9EA6551E60665A0081E937 /* DateFormatTransform.swift */,
 				7C9EA6511E60663F0081E937 /* KeysManager.swift */,
 				7C9EA6531E6066490081E937 /* Label.swift */,
-				7C9EA6551E60665A0081E937 /* DateFormatTransform.swift */,
+				7C9EA64D1E6066280081E937 /* ViewConfiguration.swift */,
 			);
 			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		7C9EA6921E60680F0081E937 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7C9EA6571E6066660081E937 /* TextField+Extension.swift */,
-				7C9EA6591E6066710081E937 /* NavigatioController+Extension.swift */,
+				7C9EA6611E6066990081E937 /* Alamofire+Extension.swift */,
+				7C9EA65F1E60668F0081E937 /* Date+Extension.swift */,
 				7C9EA65B1E60667A0081E937 /* Image+extension.swift */,
 				7C9EA65D1E6066860081E937 /* ImageView+Extension.swift */,
-				7C9EA65F1E60668F0081E937 /* Date+Extension.swift */,
-				7C9EA6611E6066990081E937 /* Alamofire+Extension.swift */,
+				7C9EA6591E6066710081E937 /* NavigatioController+Extension.swift */,
+				7C9EA6571E6066660081E937 /* TextField+Extension.swift */,
 				7C9EA6631E6066A20081E937 /* ViewController+Extension.swift */,
 			);
 			name = Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		7C9EA6931E6068200081E937 /* Core */ = {
@@ -365,6 +385,7 @@
 				7C9EA6961E6068650081E937 /* Networking */,
 			);
 			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		7C9EA6941E6068500081E937 /* FlowManager */ = {
@@ -373,31 +394,34 @@
 				7C9EA62B1E6065030081E937 /* FlowManager.swift */,
 			);
 			name = FlowManager;
+			path = FlowManager;
 			sourceTree = "<group>";
 		};
 		7C9EA6951E60685E0081E937 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7C9EA66B1E6066D20081E937 /* Episode.swift */,
+				7C9EA6691E6066C90081E937 /* Profile.swift */,
 				7C9EA6651E6066B40081E937 /* Result.swift */,
 				7C9EA6671E6066C00081E937 /* Show.swift */,
-				7C9EA6691E6066C90081E937 /* Profile.swift */,
-				7C9EA66B1E6066D20081E937 /* Episode.swift */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7C9EA6961E6068650081E937 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7C9EA6981E6068760081E937 /* DataProvider */,
+				7C9EA6971E6068700081E937 /* ImageManager */,
+				7C9EA6991E60687E0081E937 /* Validate */,
 				7C9EA66D1E6066E00081E937 /* OmdbAPI.swift */,
 				7C9EA66F1E6066E90081E937 /* TraktAPI.swift */,
-				7C9EA6711E6066F10081E937 /* TraktClient.swift */,
 				7C9EA6731E6066FA0081E937 /* TraktCallback.swift */,
-				7C9EA6971E6068700081E937 /* ImageManager */,
-				7C9EA6981E6068760081E937 /* DataProvider */,
-				7C9EA6991E60687E0081E937 /* Validate */,
+				7C9EA6711E6066F10081E937 /* TraktClient.swift */,
 			);
 			name = Networking;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		7C9EA6971E6068700081E937 /* ImageManager */ = {
@@ -406,6 +430,7 @@
 				7C9EA6751E6067080081E937 /* ImageManager.swift */,
 			);
 			name = ImageManager;
+			path = ImageManager;
 			sourceTree = "<group>";
 		};
 		7C9EA6981E6068760081E937 /* DataProvider */ = {
@@ -414,17 +439,19 @@
 				7C9EA6771E6067120081E937 /* DataProvider.swift */,
 			);
 			name = DataProvider;
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		7C9EA6991E60687E0081E937 /* Validate */ = {
 			isa = PBXGroup;
 			children = (
 				7C9EA6791E60671B0081E937 /* ValidateAuthenticationJson.swift */,
-				7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */,
 				7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */,
 				7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */,
+				7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */,
 			);
 			name = Validate;
+			path = Validate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,6 +633,7 @@
 				7C9EA6201E6062CA0081E937 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -708,7 +736,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DPQ7HP686J;
-				INFOPLIST_FILE = Couch/Info.plist;
+				INFOPLIST_FILE = Couch/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.code.Couch;
@@ -723,7 +751,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DPQ7HP686J;
-				INFOPLIST_FILE = Couch/Info.plist;
+				INFOPLIST_FILE = Couch/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.code.Couch;
