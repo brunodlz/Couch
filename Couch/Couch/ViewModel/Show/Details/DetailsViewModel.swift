@@ -33,29 +33,9 @@ class DetailsViewModel {
                         provider: DataProvider,
                         episode: Ep,
                         callback: @escaping EpisodeClosure) -> () {
-        
-        var sss = 0
-        var eee = 0
-        
-        switch episode {
-        case .first:
-            eee = self.nextEpisode()
-            sss = self.getSeason()
-            
-            break
-        case .previous:
-            eee = self.previousEpisode()
-            sss = self.getSeason()
-            
-            break
-        case .next:
-            eee = self.nextEpisode()
-            sss = self.getSeason()
-            
-            break
-        }
-        
-        provider.episodeDetails(imdb, season: sss, episode: eee) { (result) in
+
+        let ep = getCurrent(episode)
+        provider.episodeDetails(imdb, season: currentSeason, episode: ep) { (result) in
             switch result {
             case .success(let data):
                 callback(self.validate(with: data))
@@ -65,6 +45,15 @@ class DetailsViewModel {
                 callback(nil)
                 break
             }
+        }
+    }
+    
+    private func getCurrent(_ episode: Ep) -> Int {
+        switch episode {
+        case .first, .next:
+            return self.nextEpisode()
+        case .previous:
+            return self.previousEpisode()
         }
     }
     
@@ -97,10 +86,6 @@ class DetailsViewModel {
     
     private func setSeason() {
         currentSeason += 1
-    }
-    
-    private func getSeason() -> Int {
-        return currentSeason
     }
     
     private func getAllEpisodes() -> Int {
