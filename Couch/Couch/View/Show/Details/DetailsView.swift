@@ -3,12 +3,6 @@ import SnapKit
 
 class DetailsView: UIView {
     
-    func watched(progress: Int?) {
-        if let progress = progress {
-            self.progressLabel.text = "Watched: \(progress)%"
-        }
-    }
-    
     func show(episode: Episode) {
         if let season = episode.season, let number = episode.number {
             self.seasonAndEpisodeLabel.text = "SEASON \(season) • EPISODE \(number)"
@@ -60,6 +54,8 @@ class DetailsView: UIView {
     
     let overviewTextView: UITextView = {
         let text = UITextView()
+        text.isEditable = false
+        text.isSelectable = false
         text.backgroundColor = .clear
         text.textColor = ColorPalette.white
         return text
@@ -151,14 +147,14 @@ extension DetailsView: ViewConfiguration {
         previousButton.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(8)
             make.height.equalTo(30)
-            make.width.equalTo(UIScreen.main.bounds.width/2)
+            make.width.equalTo((UIScreen.main.bounds.width/2) - 2)
             make.bottom.equalTo(self).offset(-4)
         }
         
         nextButton.snp.makeConstraints { (make) in
+            make.left.equalTo(previousButton.snp.right).offset(2)
             make.right.equalTo(self).offset(-8)
             make.height.equalTo(30)
-            make.width.equalTo(UIScreen.main.bounds.width/2)
             make.bottom.equalTo(self).offset(-4)
         }
     }
