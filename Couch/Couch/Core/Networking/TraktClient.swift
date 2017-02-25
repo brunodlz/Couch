@@ -46,8 +46,8 @@ final class TraktClient {
         }
     }
     
-    func nextEpisode(_ imdb: String, callback: @escaping TraktClosure) {
-        guard let endPoint = traktApi.nextEpisode(imdb) else {
+    func allSeasons(_ imdb: String, callback: @escaping TraktClosure) {
+        guard let endPoint = traktApi.allSeasons(imdb) else {
             callback(.failure(.message("unknown url")))
             return
         }
@@ -55,17 +55,7 @@ final class TraktClient {
             callback(result)
         }
     }
-    
-    func lastEpisode(_ imdb: String, callback: @escaping TraktClosure) {
-        guard let endPoint = traktApi.lastEpisode(imdb) else {
-            callback(.failure(.message("unknown url")))
-            return
-        }
-        Service.request(with: endPoint) { (result) in
-            callback(result)
-        }
-    }
-    
+
     func episodeDetails(_ imdb: String, season: Int, episode: Int, callback: @escaping TraktClosure) throws {
         guard var endPoint = traktApi.episodeDetails(imdb, season: season, episode: episode) else {
             callback(.failure(.message("unknown url")))

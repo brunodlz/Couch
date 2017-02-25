@@ -1,12 +1,12 @@
 import UIKit
 
 enum Ep {
-    case last, next
+    case first, previous, next
 }
 
 class DetailsViewController: UIViewController {
     
-    weak var show: Show!
+    var show: Show!
     weak var provider: DataProvider!
     
     let detailsView = DetailsView()
@@ -24,7 +24,8 @@ class DetailsViewController: UIViewController {
     
     override func loadView() {
         self.view = detailsView
-        detailsView.nextEpisode.addTarget(self, action: #selector(showNextEpisode), for: .touchUpInside)
+        detailsView.previousButton.addTarget(self, action: #selector(showPreviousEpisode), for: .touchUpInside)
+        detailsView.nextButton.addTarget(self, action: #selector(showNextEpisode), for: .touchUpInside)
         
         self.title = show.title ?? ""
         self.view.backgroundColor = ColorPalette.black
@@ -32,73 +33,54 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        show(episode: .last)
+        
+        if let imdb = self.show.imdb {
+            self.didRequest()
+            self.allSeasons(with: imdb)
+        }
+    }
+    
+    @objc private func showPreviousEpisode() {
+        if let imdb = self.show.imdb {
+            self.didRequest()
+            self.episodeDetails(with: imdb, ep: .previous)
+        }
     }
     
     @objc private func showNextEpisode() {
-        show(episode: .next)
-    }
-    
-    private func show(episode: Ep) {
         if let imdb = self.show.imdb {
             self.didRequest()
-            switch episode {
-            case .last:
-                self.lastEpisode(with: imdb)
-                break
-            case .next:
-                self.nextEpisode(with: imdb)
-                break
-            }
-            self.progress(with: imdb)
+            self.episodeDetails(with: imdb, ep: .next)
         }
     }
     
-    private func nextEpisode(with imdb: String) {
-        viewModel.nextEpisode(with: imdb, provider: provider) { (episode) in
-            if let episode = episode {
-                self.detailsView.show(episode: episode)
-                self.detailsView.nextEpisode.isHidden = true
-                self.episodeDetails(with: imdb,
-                                    season: episode.season,
-                                    episode: episode.number)
+    private func allSeasons(with imdb: String) {
+        viewModel.allSeasons(with: imdb, provider: provider) { (result) in
+            if result.count > 0 {
+                self.episodeDetails(with: imdb, ep: .first)
             }
         }
     }
     
-    private func lastEpisode(with imdb: String) {
-        viewModel.lastEpisode(with: imdb, provider: provider) { (episode) in
-            if let episode = episode {
-                self.detailsView.show(episode: episode)
-                self.episodeDetails(with: imdb,
-                                    season: episode.season,
-                                    episode: episode.number)
-            }
-        }
-    }
-    
-    private func episodeDetails(with imdb: String, season: Int?, episode: Int?) {
-        viewModel.episodeDetails(with: imdb,
-                                 season: season,
-                                 episode: episode,
-                                 provider: provider) { (episode) in
-                                    guard let episode = episode else {
-                                        self.showAlert("An error occurred. try again :(")
-                                        return
-                                    }
-                                    self.detailsView.show(episode: episode)
-                                    self.didUpdate()
-        }
-    }
-    
-    private func progress(with imdb: String) {
-        viewModel.progress(with: imdb, provider: provider) { (episode) in
+    private func episodeDetails(with imdb: String, ep: Ep) {
+        viewModel.episodeDetails(with: imdb, provider: provider, episode: ep) { (episode) in
             guard let episode = episode else {
                 self.showAlert("An error occurred. try again :(")
                 return
             }
-            self.detailsView.watched(progress: episode.progress)
+            self.detailsView.show(episode: episode)
+            self.didUpdate()
         }
+    }
+    
+    private func progress(with imdb: String) {
+//        viewModel.progress(with: imdb, provider: provider) { (episode) in
+//            guard let episode = episode else {
+//                self.showAlert("An error occurred. try again :(")
+//                return
+//            }
+//            self.detailsView.watched(progress: episode.progress)
+//        }
     }
     
     private func showAlert(_ message: String) {

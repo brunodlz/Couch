@@ -54,6 +54,7 @@
 		7C9EA67C1E6067240081E937 /* ValidateShowsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */; };
 		7C9EA67E1E6067310081E937 /* ValidateProfileJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */; };
 		7C9EA6801E6067390081E937 /* ValidateDetailsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */; };
+		7CF1794B1E610F5400FCABBD /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1794A1E610F5400FCABBD /* Season.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateShowsJson.swift; sourceTree = "<group>"; };
 		7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateProfileJson.swift; sourceTree = "<group>"; };
 		7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateDetailsJson.swift; sourceTree = "<group>"; };
+		7CF1794A1E610F5400FCABBD /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		E4DBA9CF22CAAB39E3FE546E /* Pods-Couch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Couch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Couch/Pods-Couch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,7 +181,6 @@
 				7C9EA6161E6062CA0081E937 /* AppDelegate.swift */,
 				7C9EA6391E6065900081E937 /* Appearance.swift */,
 			);
-			name = AppDelegate;
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
@@ -190,7 +191,6 @@
 				7C9EA6221E6062CA0081E937 /* Info.plist */,
 				7C9EA61F1E6062CA0081E937 /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -201,7 +201,6 @@
 				7C9EA68A1E6067D30081E937 /* Show */,
 				7C9EA62D1E6065240081E937 /* FlowManagerViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -212,7 +211,6 @@
 				7C9EA6831E6067950081E937 /* NavigationController */,
 				7C9EA6851E6067AD0081E937 /* Show */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -221,7 +219,6 @@
 			children = (
 				7C9EA62F1E6065430081E937 /* MainNavigationController.swift */,
 			);
-			name = NavigationController;
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
@@ -230,7 +227,6 @@
 			children = (
 				7C9EA6311E6065500081E937 /* AuthenticationViewController.swift */,
 			);
-			name = Authentication;
 			path = Authentication;
 			sourceTree = "<group>";
 		};
@@ -241,7 +237,6 @@
 				7C9EA6871E6067BA0081E937 /* Profile */,
 				7C9EA6331E60655C0081E937 /* ShowTableViewController.swift */,
 			);
-			name = Show;
 			path = Show;
 			sourceTree = "<group>";
 		};
@@ -250,7 +245,6 @@
 			children = (
 				7C9EA6351E60656A0081E937 /* DetailsViewController.swift */,
 			);
-			name = Details;
 			path = Details;
 			sourceTree = "<group>";
 		};
@@ -259,7 +253,6 @@
 			children = (
 				7C9EA6371E6065760081E937 /* ProfileViewController.swift */,
 			);
-			name = Profile;
 			path = Profile;
 			sourceTree = "<group>";
 		};
@@ -269,7 +262,6 @@
 				7C9EA68D1E6067EC0081E937 /* Authentication */,
 				7C9EA68E1E6067F20081E937 /* Show */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -278,7 +270,6 @@
 			children = (
 				7C9EA63B1E6065B30081E937 /* AuthenticationViewModel.swift */,
 			);
-			name = Authentication;
 			path = Authentication;
 			sourceTree = "<group>";
 		};
@@ -289,7 +280,6 @@
 				7C9EA68C1E6067DE0081E937 /* Profile */,
 				7C9EA63D1E6065C20081E937 /* ShowViewModel.swift */,
 			);
-			name = Show;
 			path = Show;
 			sourceTree = "<group>";
 		};
@@ -298,7 +288,6 @@
 			children = (
 				7C9EA63F1E6065D20081E937 /* DetailsViewModel.swift */,
 			);
-			name = Details;
 			path = Details;
 			sourceTree = "<group>";
 		};
@@ -307,7 +296,6 @@
 			children = (
 				7C9EA6411E6065DC0081E937 /* ProfileViewModel.swift */,
 			);
-			name = Profile;
 			path = Profile;
 			sourceTree = "<group>";
 		};
@@ -316,7 +304,6 @@
 			children = (
 				7C9EA6431E6065F10081E937 /* AuthenticationView.swift */,
 			);
-			name = Authentication;
 			path = Authentication;
 			sourceTree = "<group>";
 		};
@@ -328,7 +315,6 @@
 				7C9EA6471E6066060081E937 /* ShowCell.swift */,
 				7C9EA6451E6065FC0081E937 /* ShowView.swift */,
 			);
-			name = Show;
 			path = Show;
 			sourceTree = "<group>";
 		};
@@ -337,7 +323,6 @@
 			children = (
 				7C9EA6491E6066100081E937 /* DetailsView.swift */,
 			);
-			name = Details;
 			path = Details;
 			sourceTree = "<group>";
 		};
@@ -346,7 +331,6 @@
 			children = (
 				7C9EA64B1E60661A0081E937 /* ProfileView.swift */,
 			);
-			name = Profile;
 			path = Profile;
 			sourceTree = "<group>";
 		};
@@ -359,7 +343,6 @@
 				7C9EA6531E6066490081E937 /* Label.swift */,
 				7C9EA64D1E6066280081E937 /* ViewConfiguration.swift */,
 			);
-			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
@@ -374,7 +357,6 @@
 				7C9EA6571E6066660081E937 /* TextField+Extension.swift */,
 				7C9EA6631E6066A20081E937 /* ViewController+Extension.swift */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -384,7 +366,6 @@
 				7C9EA6951E60685E0081E937 /* Models */,
 				7C9EA6961E6068650081E937 /* Networking */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -393,19 +374,18 @@
 			children = (
 				7C9EA62B1E6065030081E937 /* FlowManager.swift */,
 			);
-			name = FlowManager;
 			path = FlowManager;
 			sourceTree = "<group>";
 		};
 		7C9EA6951E60685E0081E937 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7CF1794A1E610F5400FCABBD /* Season.swift */,
 				7C9EA66B1E6066D20081E937 /* Episode.swift */,
 				7C9EA6691E6066C90081E937 /* Profile.swift */,
 				7C9EA6651E6066B40081E937 /* Result.swift */,
 				7C9EA6671E6066C00081E937 /* Show.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -420,7 +400,6 @@
 				7C9EA6731E6066FA0081E937 /* TraktCallback.swift */,
 				7C9EA6711E6066F10081E937 /* TraktClient.swift */,
 			);
-			name = Networking;
 			path = Networking;
 			sourceTree = "<group>";
 		};
@@ -429,7 +408,6 @@
 			children = (
 				7C9EA6751E6067080081E937 /* ImageManager.swift */,
 			);
-			name = ImageManager;
 			path = ImageManager;
 			sourceTree = "<group>";
 		};
@@ -438,7 +416,6 @@
 			children = (
 				7C9EA6771E6067120081E937 /* DataProvider.swift */,
 			);
-			name = DataProvider;
 			path = DataProvider;
 			sourceTree = "<group>";
 		};
@@ -450,7 +427,6 @@
 				7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */,
 				7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */,
 			);
-			name = Validate;
 			path = Validate;
 			sourceTree = "<group>";
 		};
@@ -614,6 +590,7 @@
 				7C9EA6381E6065760081E937 /* ProfileViewController.swift in Sources */,
 				7C9EA6341E60655C0081E937 /* ShowTableViewController.swift in Sources */,
 				7C9EA6171E6062CA0081E937 /* AppDelegate.swift in Sources */,
+				7CF1794B1E610F5400FCABBD /* Season.swift in Sources */,
 				7C9EA64C1E60661A0081E937 /* ProfileView.swift in Sources */,
 				7C9EA6481E6066060081E937 /* ShowCell.swift in Sources */,
 				7C9EA6441E6065F10081E937 /* AuthenticationView.swift in Sources */,

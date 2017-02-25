@@ -38,14 +38,8 @@ final class DataProvider {
         }
     }
     
-    func nextEpisode(_ imdb: String, callback: @escaping TraktClosure) {
-        client.nextEpisode(imdb) { (result) in
-            callback(result)
-        }
-    }
-    
-    func lastEpisode(_ imdb: String, callback: @escaping TraktClosure) {
-        client.lastEpisode(imdb) { (result) in
+    func allSeasons(_ imdb: String, callback: @escaping TraktClosure) {
+        client.allSeasons(imdb) { (result) in
             callback(result)
         }
     }

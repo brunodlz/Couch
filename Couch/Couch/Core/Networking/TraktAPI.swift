@@ -22,9 +22,9 @@ final class TraktAPI {
         case token
         case profile
         case shows(String)
+        case summary(String)
         case progress(String)
-        case nextEpisode(String)
-        case lastEpisode(String)
+        case allSeasons(String)
         case episodeDetails(String,Int,Int)
         
         func url() -> String {
@@ -38,17 +38,17 @@ final class TraktAPI {
             case .shows(let user):
                 return "\(OAuth.url)/users/\(user)/watchlist/shows"
                 
+            case .summary(let imdb):
+                return "\(OAuth.url)shows/\(imdb)?extended=full"
+                
             case .progress(let imdb):
                 return "\(OAuth.url)/shows/\(imdb)/progress/watched"
-                
-            case .nextEpisode(let imdb):
-                return "\(OAuth.url)/shows/\(imdb)/next_episode"
-                
-            case .lastEpisode(let imdb):
-                return "\(OAuth.url)/shows/\(imdb)/last_episode"
+
+            case .allSeasons(let imdb):
+                return "\(OAuth.url)/shows/\(imdb)/seasons?extended=episodes"
                 
             case .episodeDetails(let imdb, let season, let episode):
-                return "\(OAuth.url)/shows/\(imdb)/seasons/\(season)/episodes/\(episode)"
+                return "\(OAuth.url)/shows/\(imdb)/seasons/\(season)/episodes/\(episode)?extended=full"
             }
         }
     }
@@ -73,13 +73,8 @@ final class TraktAPI {
         return TraktAPI.to(endPoint, method: .get, authorization: true)
     }
     
-    func nextEpisode(_ imdb: String) -> URLRequest? {
-        let endPoint = URL(string: TraktAPI.Endpoints.nextEpisode(imdb).url())
-        return TraktAPI.to(endPoint, method: .get)
-    }
-    
-    func lastEpisode(_ imdb: String) -> URLRequest? {
-        let endPoint = URL(string: TraktAPI.Endpoints.lastEpisode(imdb).url())
+    func allSeasons(_ imdb: String) -> URLRequest? {
+        let endPoint = URL(string: TraktAPI.Endpoints.allSeasons(imdb).url())
         return TraktAPI.to(endPoint, method: .get)
     }
     

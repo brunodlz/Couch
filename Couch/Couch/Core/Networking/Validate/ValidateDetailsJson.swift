@@ -3,18 +3,27 @@ import ObjectMapper
 
 struct ValidateDetailsJson {
     
-    static func validate(data: RawData) -> Episode? {
+    static func validate(Episode data: RawData) -> Episode? {
         guard let details = data as? [String:AnyObject] else { return nil }
-        guard let nextEpisode = details["next_episode"] as? [String:AnyObject] else {
-            return Mapper<Episode>().map(JSONObject: details)
-        }
-        guard let episode = Mapper<Episode>().map(JSONObject: nextEpisode) else {
-            return nil
-        }
-        if let aired = details["aired"] as? Int, let completed = details["completed"] as? Int {
-            episode.progress = (completed > 0) ? ((100 * completed) / aired) : 0
+        
+        let episode = Mapper<Episode>().map(JSONObject: details)
+
+        if let dateTime = details["first_aired"] as? String {
+            episode?.aired = Date().convertDate(To: dateTime)
         }
         return episode
     }
     
+    static func validate(Season data: RawData) -> [Season] {
+        var allSeasons = [Season]()
+        
+        guard let details = data as? Array<AnyObject> else { return allSeasons }
+        
+        for info in details {
+            if let season = Mapper<Season>().map(JSONObject: info) {
+                allSeasons.append(season)
+            }
+        }
+        return allSeasons
+    }
 }

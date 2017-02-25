@@ -9,8 +9,8 @@ class Episode: Mappable {
     var slug: String?
     var tmdb: String?
     var trakt: String?
+    var aired: DateComponents?
     var overview: String?
-    var progress: Int?
     
     required init?(map: Map) {}
     
@@ -22,7 +22,7 @@ class Episode: Mappable {
         slug     <- map["ids.slug"]
         tmdb     <- map["ids.tmdb"]
         trakt    <- map["ids.trakt"]
+        aired    <- map[""]
         overview <- map["overview"]
-        progress <- map[""]
     }
 }
