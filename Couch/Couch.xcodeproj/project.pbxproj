@@ -163,14 +163,14 @@
 			isa = PBXGroup;
 			children = (
 				7C9EA6281E6064620081E937 /* AppDelegate */,
+				7C9EA6941E6068500081E937 /* FlowManager */,
 				7C9EA6821E60678D0081E937 /* Controllers */,
 				7C9EA6931E6068200081E937 /* Core */,
 				7C9EA6921E60680F0081E937 /* Extension */,
-				7C9EA6941E6068500081E937 /* FlowManager */,
-				7C9EA62A1E6064790081E937 /* Resources */,
-				7C9EA6911E60680A0081E937 /* Shared */,
-				7C9EA6881E6067C50081E937 /* View */,
 				7C9EA6811E6067800081E937 /* ViewModel */,
+				7C9EA6881E6067C50081E937 /* View */,
+				7C9EA6911E60680A0081E937 /* Shared */,
+				7C9EA62A1E6064790081E937 /* Resources */,
 			);
 			path = Couch;
 			sourceTree = "<group>";
