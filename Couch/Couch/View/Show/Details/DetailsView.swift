@@ -29,12 +29,8 @@ class DetailsView: UIView {
     }()
     
     let previousButton: UIButton = {
-        let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        let button = UIButton(type: .system)
-        button.frame = frame
-        button.setTitle(" < ", for: .normal)
-        button.setTitleColor(ColorPalette.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        button.setImage(.previous(), for: .normal)
         return button
     }()
     
@@ -63,16 +59,10 @@ class DetailsView: UIView {
     }()
     
     let nextButton: UIButton = {
-        let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        let button = UIButton(type: .system)
-        button.frame = frame
-        button.setTitle(" > ", for: .normal)
-        button.setTitleColor(ColorPalette.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-//        button.backgroundColor = ColorPalette.white
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        button.setImage(.next(), for: .normal)
         return button
     }()
-    
     
     let airedLabel: UILabel = {
         let label = UILabel()
@@ -129,7 +119,7 @@ extension DetailsView: ViewConfiguration {
         }
         
         airedLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(stackView.snp.bottom)
+            make.top.equalTo(stackView.snp.bottom).offset(8)
             make.left.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)
             make.height.equalTo(20)
