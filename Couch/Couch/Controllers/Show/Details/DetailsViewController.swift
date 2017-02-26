@@ -73,16 +73,6 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    private func progress(with imdb: String) {
-//        viewModel.progress(with: imdb, provider: provider) { (episode) in
-//            guard let episode = episode else {
-//                self.showAlert("An error occurred. try again :(")
-//                return
-//            }
-//            self.detailsView.watched(progress: episode.progress)
-//        }
-    }
-    
     private func showAlert(_ message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
