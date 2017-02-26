@@ -5,7 +5,8 @@ class DetailsView: UIView {
     
     func show(episode: Episode) {
         if let season = episode.season, let number = episode.number {
-            self.seasonAndEpisodeLabel.text = "SEASON \(season) • EPISODE \(number)"
+            self.seasonLabel.text = "SEASON \(season)"
+            self.episodeLabel.text = "EPISODE \(number)"
         }
         self.overviewTextView.text = episode.overview ?? ""
         let date = Date().convertString(To: episode.aired, mask: .day)
@@ -19,27 +20,65 @@ class DetailsView: UIView {
         return image
     }()
     
-    let seasonAndEpisodeLabel: UILabel = {
-        let label = UILabel()
+    let stackView: UIStackView = {
+        let stackView = UIStackView(frame: .zero)
+        stackView.distribution = .fillProportionally
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    let previousButton: UIButton = {
+        let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let button = UIButton(type: .system)
+        button.frame = frame
+        button.setTitle(" < ", for: .normal)
+        button.setTitleColor(ColorPalette.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
+        return button
+    }()
+    
+    let seasonLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .right
         label.textColor = ColorPalette.white
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
+    
+    let separatorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "•"
+        label.textAlignment = .center
+        label.textColor = ColorPalette.white
+        return label
+    }()
+
+    let episodeLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        label.textColor = ColorPalette.white
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+    
+    let nextButton: UIButton = {
+        let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let button = UIButton(type: .system)
+        button.frame = frame
+        button.setTitle(" > ", for: .normal)
+        button.setTitleColor(ColorPalette.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
+//        button.backgroundColor = ColorPalette.white
+        return button
+    }()
+    
     
     let airedLabel: UILabel = {
         let label = UILabel()
         label.textColor = ColorPalette.white
         label.font = UIFont.italicSystemFont(ofSize: 12)
         label.textAlignment = .left
-        return label
-    }()
-    
-    let progressLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = ColorPalette.white
-        label.font = UIFont.italicSystemFont(ofSize: 12)
-        label.textAlignment = .right
         return label
     }()
     
@@ -59,33 +98,6 @@ class DetailsView: UIView {
         text.backgroundColor = .clear
         text.textColor = ColorPalette.white
         return text
-    }()
-    
-    let nextButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Next", for: .normal)
-        button.setTitleColor(ColorPalette.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
-        button.backgroundColor = ColorPalette.white
-        return button
-    }()
-    
-    let previousButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Previous", for: .normal)
-        button.setTitleColor(ColorPalette.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-        button.backgroundColor = ColorPalette.white
-        return button
-    }()
-    
-    let markAsWatchedButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Watched", for: .normal)
-        button.setTitleColor(ColorPalette.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
-        button.backgroundColor = ColorPalette.white
-        return button
     }()
     
     override init(frame: CGRect) {
@@ -109,23 +121,16 @@ extension DetailsView: ViewConfiguration {
             make.height.equalTo(120)
         }
         
-        seasonAndEpisodeLabel.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { (make) in
             make.top.equalTo(episodeImage.snp.bottom).offset(8)
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.height.equalTo(20)
+            make.left.equalTo(self).offset(8)
+            make.right.equalTo(self).offset(-8)
+            make.height.equalTo(30)
         }
         
         airedLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(seasonAndEpisodeLabel.snp.bottom)
-            make.width.equalTo(UIScreen.main.bounds.width/2)
+            make.top.equalTo(stackView.snp.bottom)
             make.left.equalTo(self).offset(10)
-            make.height.equalTo(20)
-        }
-        
-        progressLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(seasonAndEpisodeLabel.snp.bottom)
-            make.left.equalTo(airedLabel.snp.right).offset(2)
             make.right.equalTo(self).offset(-10)
             make.height.equalTo(20)
         }
@@ -141,34 +146,23 @@ extension DetailsView: ViewConfiguration {
             make.top.equalTo(overviewLabel.snp.bottom)
             make.left.equalTo(self).offset(8)
             make.right.equalTo(self).offset(-8)
-            make.bottom.equalTo(previousButton.snp.top).offset(-4)
-        }
-        
-        previousButton.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(8)
-            make.height.equalTo(30)
-            make.width.equalTo((UIScreen.main.bounds.width/2) - 2)
-            make.bottom.equalTo(self).offset(-4)
-        }
-        
-        nextButton.snp.makeConstraints { (make) in
-            make.left.equalTo(previousButton.snp.right).offset(2)
-            make.right.equalTo(self).offset(-8)
-            make.height.equalTo(30)
             make.bottom.equalTo(self).offset(-4)
         }
     }
     
     func buildViewHierarchy() {
         self.addSubview(episodeImage)
-        self.addSubview(seasonAndEpisodeLabel)
-        self.addSubview(overviewLabel)
+        
+        stackView.addArrangedSubview(previousButton)
+        stackView.addArrangedSubview(seasonLabel)
+        stackView.addArrangedSubview(separatorLabel)
+        stackView.addArrangedSubview(episodeLabel)
+        stackView.addArrangedSubview(nextButton)
+        self.addSubview(stackView)
+        
         self.addSubview(airedLabel)
-        self.addSubview(progressLabel)
+        self.addSubview(overviewLabel)
         self.addSubview(overviewTextView)
-        self.addSubview(previousButton)
-        self.addSubview(nextButton)
-        self.addSubview(markAsWatchedButton)
     }
     
     func configureViews() {
