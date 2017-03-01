@@ -51,13 +51,13 @@ class DetailsViewModel {
     private func getCurrent(_ episode: Ep) -> Int {
         switch episode {
         case .first, .next:
-            return self.nextEpisode()
+            return self.nextEpisode
         case .previous:
-            return self.previousEpisode()
+            return self.previousEpisode
         }
     }
     
-    private func previousEpisode() -> Int {
+    private var previousEpisode: Int {
         guard currentEpisode == 1 else {
             currentEpisode -= 1
             return currentEpisode
@@ -70,7 +70,7 @@ class DetailsViewModel {
         return currentEpisode
     }
     
-    private func nextEpisode() -> Int {
+    private var nextEpisode: Int {
         allEpisodes = getAllEpisodes()
         if currentEpisode == allEpisodes {
             if containsNextSeason() {
