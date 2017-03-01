@@ -15,6 +15,7 @@ class ShowTableViewController: UITableViewController {
     
     private struct Constants {
         static let cellIdentifier = "cell"
+        static let headerIdentifier = "seg"
     }
     
     var shows = [Show]() {
@@ -38,6 +39,7 @@ class ShowTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundColor = ColorPalette.black
+        tableView.register(SegmentCell.self, forCellReuseIdentifier: Constants.headerIdentifier)
         tableView.register(ShowCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
         tableView.rowHeight = 100
         tableView.separatorStyle = .none
@@ -78,6 +80,15 @@ class ShowTableViewController: UITableViewController {
         delegate?.showTableViewController(self, didSelect: shows[indexPath.item])
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let segment = tableView.dequeueReusableCell(withIdentifier: Constants.headerIdentifier) as! SegmentCell
+        segment.backgroundColor = ColorPalette.black
+        return segment
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
 }
 
 extension ShowTableViewController {
