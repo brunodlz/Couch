@@ -21,6 +21,7 @@ final class TraktAPI {
     enum Endpoints {
         case token
         case profile
+        case popular
         case shows(String)
         case summary(String)
         case progress(String)
@@ -34,6 +35,9 @@ final class TraktAPI {
                 
             case .profile:
                 return "\(OAuth.url)/users/settings"
+            
+            case .popular:
+                return "\(OAuth.url)/movies/popular"
                 
             case .shows(let user):
                 return "\(OAuth.url)/users/\(user)/watchlist/shows"
@@ -63,6 +67,11 @@ final class TraktAPI {
         return TraktAPI.to(endPoint, method: .get, authorization: true)
     }
     
+    func popular() -> URLRequest? {
+        let endPoint = URL(string: TraktAPI.Endpoints.popular.url())
+        return TraktAPI.to(endPoint, method: .get)
+    }
+    
     func shows(_ user: String) -> URLRequest? {
         let endPoint = URL(string: TraktAPI.Endpoints.shows(user).url())
         return TraktAPI.to(endPoint, method: .get)
@@ -82,36 +91,4 @@ final class TraktAPI {
         let endPoint = URL(string: TraktAPI.Endpoints.episodeDetails(imdb, season, episode).url())
         return TraktAPI.to(endPoint, method: .get)
     }
-}
-
-extension TraktAPI {
-    
-    static fileprivate func to(_ url: URL?,
-                               method: HTTPMethod,
-                               authorization: Bool = false) -> URLRequest? {
-        
-        guard let url = url else { return nil }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method.rawValue
-        
-        let headers = TraktAPI.headerWithAuth()
-        for (headerField, headerValue) in headers {
-            urlRequest.setValue(headerValue, forHTTPHeaderField: headerField)
-        }
-        
-        if authorization && KeysManager.getToken().characters.count > 0 {
-            let token = KeysManager.getToken()
-            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        return urlRequest
-    }
-    
-    static func headerWithAuth() -> [String:String] {
-        return ["Content-Type": "application/json",
-                "trakt-api-version": "2",
-                "trakt-api-key": OAuth.clientID]
-    }
-    
 }

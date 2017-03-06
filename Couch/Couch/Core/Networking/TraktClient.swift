@@ -25,6 +25,16 @@ final class TraktClient {
             callback(result)
         }
     }
+
+    func popular(callback: @escaping TraktClosure) {
+        guard let endPoint = traktApi.popular() else {
+            callback(.failure(.message("unknow url")))
+            return
+        }
+        Service.request(with: endPoint) { (result) in
+            callback(result)
+        }
+    }
     
     func shows(withUser user: String, callback: @escaping TraktClosure) {
         guard let endPoint = traktApi.shows(user) else {
