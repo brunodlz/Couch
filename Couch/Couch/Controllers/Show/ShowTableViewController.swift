@@ -24,6 +24,12 @@ class ShowTableViewController: UITableViewController {
         }
     }
     
+    var selected = 0
+    var segmentIndex: Int {
+        set { selected = newValue }
+        get { return selected }
+    }
+    
     init(provider: DataProvider, delegate: ShowTableViewControllerDelegate) {
         self.provider = provider
         self.delegate = delegate
@@ -66,6 +72,14 @@ class ShowTableViewController: UITableViewController {
         }
     }
     
+    private func currentPopular() {
+        viewModel.popular(provider) { result in
+            self.didUpdate()
+            self.shows.removeAll()
+            self.shows = result
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.shows.count
     }
@@ -83,7 +97,28 @@ class ShowTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let segment = tableView.dequeueReusableCell(withIdentifier: Constants.headerIdentifier) as! SegmentCell
         segment.backgroundColor = ColorPalette.black
+        
+        segment.segment.addTarget(self, action: #selector(pressed), for: .valueChanged)
+        segment.segment.selectedSegmentIndex = selected
         return segment
+    }
+    
+    func pressed(sender: UISegmentedControl) {
+        segmentIndex = sender.selectedSegmentIndex
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.currentWatching()
+            break
+        case 1:
+            self.currentPopular()
+            break
+        case 2:
+            print("3")
+            break
+            
+        default: break
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

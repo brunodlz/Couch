@@ -31,11 +31,9 @@ final class DataProvider {
             callback(result)
         }
     }
-    
-    func progress(_ imdb: String, callback: @escaping TraktClosure) {
-        client.progress(imdb) { (result) in
-            callback(result)
-        }
+
+    func popular(callback: @escaping TraktClosure) {
+        client.popular(callback: callback)
     }
     
     func allSeasons(_ imdb: String, callback: @escaping TraktClosure) {
