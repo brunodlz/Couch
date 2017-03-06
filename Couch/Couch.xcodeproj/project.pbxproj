@@ -55,6 +55,7 @@
 		7C9EA67C1E6067240081E937 /* ValidateShowsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */; };
 		7C9EA67E1E6067310081E937 /* ValidateProfileJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */; };
 		7C9EA6801E6067390081E937 /* ValidateDetailsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */; };
+		7CED78B11E6CFC84008377C5 /* TraktAPI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED78B01E6CFC84008377C5 /* TraktAPI+Extension.swift */; };
 		7CF1794B1E610F5400FCABBD /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1794A1E610F5400FCABBD /* Season.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateShowsJson.swift; sourceTree = "<group>"; };
 		7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateProfileJson.swift; sourceTree = "<group>"; };
 		7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateDetailsJson.swift; sourceTree = "<group>"; };
+		7CED78B01E6CFC84008377C5 /* TraktAPI+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TraktAPI+Extension.swift"; sourceTree = "<group>"; };
 		7CF1794A1E610F5400FCABBD /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		E4DBA9CF22CAAB39E3FE546E /* Pods-Couch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Couch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Couch/Pods-Couch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -359,6 +361,7 @@
 				7C9EA6591E6066710081E937 /* NavigatioController+Extension.swift */,
 				7C9EA6571E6066660081E937 /* TextField+Extension.swift */,
 				7C9EA6631E6066A20081E937 /* ViewController+Extension.swift */,
+				7CED78B01E6CFC84008377C5 /* TraktAPI+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				7C9EA66E1E6066E00081E937 /* OmdbAPI.swift in Sources */,
 				7C9EA6301E6065430081E937 /* MainNavigationController.swift in Sources */,
 				7C9EA62E1E6065240081E937 /* FlowManagerViewModel.swift in Sources */,
+				7CED78B11E6CFC84008377C5 /* TraktAPI+Extension.swift in Sources */,
 				7C9EA65C1E60667A0081E937 /* Image+extension.swift in Sources */,
 				7C9EA63E1E6065C20081E937 /* ShowViewModel.swift in Sources */,
 				7C9EA6581E6066660081E937 /* TextField+Extension.swift in Sources */,
