@@ -27,7 +27,7 @@ class SegmentCell: UITableViewCell {
         segment.snp.makeConstraints { (make) in
             make.centerXWithinMargins.equalTo(self)
             make.centerYWithinMargins.equalTo(self)
-            make.height.equalTo(20)
+            make.height.equalTo(29)
         }
     }
     
