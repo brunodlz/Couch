@@ -56,6 +56,7 @@
 		7C9EA67E1E6067310081E937 /* ValidateProfileJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */; };
 		7C9EA6801E6067390081E937 /* ValidateDetailsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */; };
 		7CED78B11E6CFC84008377C5 /* TraktAPI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED78B01E6CFC84008377C5 /* TraktAPI+Extension.swift */; };
+		7CED78B31E6CFEB2008377C5 /* ValidatePopularJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED78B21E6CFEB2008377C5 /* ValidatePopularJson.swift */; };
 		7CF1794B1E610F5400FCABBD /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1794A1E610F5400FCABBD /* Season.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateProfileJson.swift; sourceTree = "<group>"; };
 		7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateDetailsJson.swift; sourceTree = "<group>"; };
 		7CED78B01E6CFC84008377C5 /* TraktAPI+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TraktAPI+Extension.swift"; sourceTree = "<group>"; };
+		7CED78B21E6CFEB2008377C5 /* ValidatePopularJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatePopularJson.swift; sourceTree = "<group>"; };
 		7CF1794A1E610F5400FCABBD /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		E4DBA9CF22CAAB39E3FE546E /* Pods-Couch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Couch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Couch/Pods-Couch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,6 +434,7 @@
 				7C9EA67F1E6067390081E937 /* ValidateDetailsJson.swift */,
 				7C9EA67D1E6067310081E937 /* ValidateProfileJson.swift */,
 				7C9EA67B1E6067240081E937 /* ValidateShowsJson.swift */,
+				7CED78B21E6CFEB2008377C5 /* ValidatePopularJson.swift */,
 			);
 			path = Validate;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				7C9EA64C1E60661A0081E937 /* ProfileView.swift in Sources */,
 				7C9EA6481E6066060081E937 /* ShowCell.swift in Sources */,
 				7C9EA6441E6065F10081E937 /* AuthenticationView.swift in Sources */,
+				7CED78B31E6CFEB2008377C5 /* ValidatePopularJson.swift in Sources */,
 				7C9EA67C1E6067240081E937 /* ValidateShowsJson.swift in Sources */,
 				7C9EA65E1E6066860081E937 /* ImageView+Extension.swift in Sources */,
 				7C9EA6621E6066990081E937 /* Alamofire+Extension.swift in Sources */,
