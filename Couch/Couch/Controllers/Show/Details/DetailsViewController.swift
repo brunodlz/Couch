@@ -26,6 +26,7 @@ class DetailsViewController: UIViewController {
         self.view = detailsView
         detailsView.previousButton.addTarget(self, action: #selector(showPreviousEpisode), for: .touchUpInside)
         detailsView.nextButton.addTarget(self, action: #selector(showNextEpisode), for: .touchUpInside)
+        detailsView.favoriteButton.addTarget(self, action: #selector(favoriteEpisode), for: .touchUpInside)
         
         self.title = show.title ?? ""
         self.view.backgroundColor = ColorPalette.black
@@ -52,6 +53,10 @@ class DetailsViewController: UIViewController {
             self.didRequest()
             self.episodeDetails(with: imdb, ep: .next)
         }
+    }
+    
+    @objc private func favoriteEpisode() {
+        
     }
     
     private func allSeasons(with imdb: String) {

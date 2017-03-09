@@ -81,6 +81,12 @@ class DetailsView: UIView {
         return label
     }()
     
+    let favoriteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "unfavorite"), for: .normal)
+        return button
+    }()
+    
     let overviewTextView: UITextView = {
         let text = UITextView()
         text.isEditable = false
@@ -128,8 +134,15 @@ extension DetailsView: ViewConfiguration {
         overviewLabel.snp.makeConstraints { (make) in
             make.top.equalTo(airedLabel.snp.bottom).offset(8)
             make.left.equalTo(self).offset(10)
-            make.right.equalTo(self).offset(-10)
+            make.right.equalTo(favoriteButton.snp.left).offset(-2)
             make.height.equalTo(20)
+        }
+        
+        favoriteButton.snp.makeConstraints { (make) in
+            make.top.equalTo(airedLabel.snp.bottom).offset(4)
+            make.right.equalTo(self).offset(-20)
+            make.width.equalTo(25)
+            make.height.equalTo(25)
         }
         
         overviewTextView.snp.makeConstraints { (make) in
@@ -152,6 +165,7 @@ extension DetailsView: ViewConfiguration {
         
         self.addSubview(airedLabel)
         self.addSubview(overviewLabel)
+        self.addSubview(favoriteButton)
         self.addSubview(overviewTextView)
     }
     
