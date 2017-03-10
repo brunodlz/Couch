@@ -10,6 +10,7 @@ class Profile: Mappable {
     var age: Int?
     var about: String?
     var slug: String?
+    var connection: Connection?
     
     required init?(map: Map) {}
     
@@ -22,5 +23,6 @@ class Profile: Mappable {
         age       <- map["age"]
         avatar    <- map["images.avatar.full"]
         slug      <- map["ids.slug"]
+        connection <- map[""]
     }
 }

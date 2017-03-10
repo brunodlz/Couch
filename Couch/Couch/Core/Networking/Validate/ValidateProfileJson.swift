@@ -17,6 +17,13 @@ struct ValidateProfileJson {
             KeysManager.setUser(slug)
             UserDefaults.standard.synchronize()
         }
+        
+        
+        guard let connections = settings["connections"] as? [String:AnyObject] else { return nil }
+        if let connection = Mapper<Connection>().map(JSON: connections) {
+            profile?.connection = connection
+        }
+        
         return profile
     }
     
