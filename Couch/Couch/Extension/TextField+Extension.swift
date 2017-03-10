@@ -21,19 +21,4 @@ class TextField: UITextField {
                                                         attributes: [NSForegroundColorAttributeName:
                                                             UIColor.white.withAlphaComponent(0.5)])
     }
-    
-    func addDoneButtonOnKeyboard() {
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 40))
-        
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton  = UIBarButtonItem(title: "Ok", style: .done, target: self, action: #selector(self.doneButtonAction))
-        
-        toolbar.items = [flexSpace, doneButton]
-        
-        self.inputAccessoryView = toolbar
-    }
-    
-    func doneButtonAction() {
-        self.resignFirstResponder()
-    }
 }
