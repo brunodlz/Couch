@@ -43,6 +43,8 @@ class ShowTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController?.topView(hidden: false)
         
         tableView.backgroundColor = ColorPalette.black
         tableView.register(SegmentCell.self, forCellReuseIdentifier: Constants.headerIdentifier)
