@@ -28,6 +28,9 @@ class AuthenticationViewController: UIViewController {
         self.view = loginView
         self.view.backgroundColor = ColorPalette.black
         
+        self.navigationController?.topView(hidden: true)
+
+        loginView.pinTextField.delegate = self
         loginView.connectButton.addTarget(self,
                                           action: #selector(connect),
                                           for: .touchUpInside)
@@ -45,12 +48,22 @@ class AuthenticationViewController: UIViewController {
                     print("---> an error occurred, try again :(")
                     return
                 }
-                if self.viewModel.validateToken(with: data) {
-                    self.didUpdate()
-                    self.delegate?.validateWithSuccess()
+                guard self.viewModel.validateToken(with: data) else {
+                    self.alert()
+                    return
                 }
+                self.didUpdate()
+                self.delegate?.validateWithSuccess()
             })
         }
+    }
+    
+    private func alert() {
+        let alertController = UIAlertController(title: "Error", message: "Incorrect information\ntry again :)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
@@ -71,6 +84,21 @@ extension AuthenticationViewController: SFSafariViewControllerDelegate {
         let safariViewController = SFSafariViewController(url: url)
         safariViewController.delegate = self
         self.present(safariViewController, animated: true, completion: nil)
+    }
+    
+}
+
+extension AuthenticationViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        guard let text = textField.text else { return true }
+        guard !text.isEmpty else { return true }
+        
+        self.connect()
+        
+        return true
     }
     
 }

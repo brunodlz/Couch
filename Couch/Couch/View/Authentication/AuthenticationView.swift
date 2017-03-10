@@ -3,15 +3,33 @@ import SnapKit
 
 final class AuthenticationView: UIView {
     
+    let bannerImage: UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "banner"))
+        return image
+    }()
+    
+    let iconImage: UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "trakt"))
+        return image
+    }()
+
+    let traktLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "T R A K T"
+        label.textColor = ColorPalette.white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+        return label
+    }()
+    
     let containerView: UIView = {
         let view = UIView(frame: .zero)
         return view
     }()
-    
+
     let pinTextField: UITextField = {
-        let textField = TextField()
+        let textField = TextField(frame: .zero)
         textField.setPlaceHolder(with: "Insert Your Pin")
-        textField.addDoneButtonOnKeyboard()
         return textField
     }()
     
@@ -50,9 +68,31 @@ final class AuthenticationView: UIView {
 
 extension AuthenticationView: ViewConfiguration {
     func setupConstraints() {
-        containerView.snp.makeConstraints { (make) in
+        
+        bannerImage.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.left.equalTo(self)
+            make.bottom.equalTo(self)
+            make.right.equalTo(self)
+        }
+        
+        iconImage.snp.makeConstraints { (make) in
+            make.top.equalTo(self).offset(60)
             make.centerX.equalTo(self)
-            make.centerY.equalTo(self)
+            make.width.equalTo(64)
+            make.height.equalTo(64)
+        }
+        
+        traktLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(iconImage.snp.bottom).offset(20)
+            make.left.equalTo(self)
+            make.right.equalTo(self)
+            make.height.equalTo(20)
+        }
+        
+        containerView.snp.makeConstraints { (make) in
+            make.top.equalTo(traktLabel.snp.bottom).offset(40)
+            make.centerX.equalTo(iconImage.snp.centerX)
             make.width.equalTo(self)
             make.height.equalTo(152)
         }
@@ -80,6 +120,12 @@ extension AuthenticationView: ViewConfiguration {
     }
     
     func buildViewHierarchy() {
+        
+        self.bannerImage.addBlur()
+        self.addSubview(bannerImage)
+        self.addSubview(iconImage)
+        self.addSubview(traktLabel)
+    
         containerView.addSubview(pinTextField)
         containerView.addSubview(connectButton)
         containerView.addSubview(getPinButton)
