@@ -75,53 +75,53 @@ extension ProfileView: ViewConfiguration {
             make.right.equalTo(self).offset(-8)
             make.bottom.equalTo(self).offset(-8)
         }
-//        
-//        usernameLabel.snp.makeConstraints { (make) in
-//            make.top.equalTo(self).offset(20)
-//            make.left.equalTo(self)
-//            make.right.equalTo(self)
-//            make.height.equalTo(22)
-//        }
-//        
-//        avatarImage.snp.makeConstraints { (make) in
-//            make.top.equalTo(usernameLabel.snp.bottom).offset(8)
-//            make.centerX.equalTo(self)
-//            make.width.equalTo(120)
-//            make.height.equalTo(120)
-//        }
-//        
-//        memberSinceLabel.snp.makeConstraints { (make) in
-//            make.top.equalTo(avatarImage.snp.bottom).offset(8)
-//            make.left.equalTo(self).offset(32)
-//            make.right.equalTo(self).offset(-32)
-//        }
-//        
-//        aboutLabel.snp.makeConstraints { (make) in
-//            make.top.equalTo(memberSinceLabel.snp.bottom).offset(8)
-//            make.left.equalTo(self).offset(32)
-//            make.right.equalTo(self).offset(-32)
-//        }
-//        
-//        locationLabel.snp.makeConstraints { (make) in
-//            make.top.equalTo(aboutLabel.snp.bottom).offset(8)
-//            make.left.equalTo(self).offset(32)
-//            make.right.equalTo(self).offset(-32)
-//        }
-//        
-//        ageLabel.snp.makeConstraints { (make) in
-//            make.top.equalTo(locationLabel.snp.bottom).offset(8)
-//            make.left.equalTo(self).offset(32)
-//            make.right.equalTo(self).offset(-32)
-//        }
+        
+        usernameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(containerView.snp.top).offset(20)
+            make.left.equalTo(self)
+            make.right.equalTo(self)
+            make.height.equalTo(22)
+        }
+        
+        avatarImage.snp.makeConstraints { (make) in
+            make.top.equalTo(usernameLabel.snp.bottom).offset(8)
+            make.centerX.equalTo(self)
+            make.width.equalTo(120)
+            make.height.equalTo(120)
+        }
+        
+        memberSinceLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(avatarImage.snp.bottom).offset(8)
+            make.left.equalTo(self).offset(32)
+            make.right.equalTo(self).offset(-32)
+        }
+        
+        aboutLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(memberSinceLabel.snp.bottom).offset(8)
+            make.left.equalTo(self).offset(32)
+            make.right.equalTo(self).offset(-32)
+        }
+        
+        locationLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(aboutLabel.snp.bottom).offset(8)
+            make.left.equalTo(self).offset(32)
+            make.right.equalTo(self).offset(-32)
+        }
+        
+        ageLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(locationLabel.snp.bottom).offset(8)
+            make.left.equalTo(self).offset(32)
+            make.right.equalTo(self).offset(-32)
+        }
     }
     
     func buildViewHierarchy() {
-//        self.addSubview(usernameLabel)
-//        self.addSubview(avatarImage)
-//        self.addSubview(memberSinceLabel)
-//        self.addSubview(aboutLabel)
-//        self.addSubview(locationLabel)
-//        self.addSubview(ageLabel)
+        containerView.addSubview(usernameLabel)
+        containerView.addSubview(avatarImage)
+        containerView.addSubview(memberSinceLabel)
+        containerView.addSubview(aboutLabel)
+        containerView.addSubview(locationLabel)
+        containerView.addSubview(ageLabel)
         
         self.addSubview(containerView)
     }
