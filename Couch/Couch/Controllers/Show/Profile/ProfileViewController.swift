@@ -22,6 +22,8 @@ extension ProfileViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = "Profile"
         
         viewModel.getProfile(provider) { (result) in
             if let profile = result {
